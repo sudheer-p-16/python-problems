@@ -1,0 +1,285 @@
+N = int(input())
+print(N)
+my_list=[]
+my_list.insert(0, 5)
+my_list.insert(1, 10)
+my_list.insert(0, 6)
+print(my_list)
+my_list.remove(6)
+my_list.append(9)
+my_list.append(1)
+my_list.sort()
+print(my_list)
+my_list.pop()
+my_list.reverse()
+print(my_list)
+
+
+first_name = "sudheer"
+last_name = "pilli"
+print(f"Hello {first_name} {last_name}! You just got into python")
+
+
+def count_substring(string, sub_string):
+    count=0
+    for i in range(len(string)):
+        if string[i:].startswith(sub_string):
+            count+=1
+    return count
+print(count_substring("sudheer","e"))
+
+
+
+def mutate_string(string, position, character):
+
+        string=list(string)
+        user=int(input("pick a postion "))
+        cha=input("enter a chaar to replace ")
+        string[user]=string.append(cha)
+
+
+        return
+print(mutate_string("sudheer",0,"u"))
+
+
+my_string="sudheer"
+i=list(my_string)
+pos=int(input("enter your postion "))
+char=input("enter a char to replace")
+i[pos]=char
+my_string="".join(i)
+print(my_string)
+
+
+def mutate_string(string, position, character):
+    i=list(string)
+    i[position]=character
+    string="".join(i)
+    return string
+result=mutate_string("DOD",0,"G")
+print(result)
+
+def split_and_join(line):
+    my_string = line
+    a = my_string.split(" ")
+    my_string = "-".join(a)
+    return my_string
+result=split_and_join("i want to change")
+print(result)
+
+
+def swap_case(s):
+    my_string=s
+    result = my_string.swapcase()
+    return result
+finalres=swap_case("SudHeeR")
+print(finalres)
+
+
+s = input()
+if (0<(len(s))<1000):
+    if s.isalnum():
+        print(True)
+    elif s.isalpha():
+        print(True)
+    elif s.isdigit():
+        print(True)
+    elif s.islower():
+        print(True)
+    elif s.isupper():
+        print(True)
+    else:
+        print(False)
+
+s = input()
+for f in [ "isalnum", "isalpha", "isdigit", "islower", "isupper" ] :
+    print( any( eval( "c." + f + "()" ) for c in s ) )
+
+s = input()
+meths=["isalnum", "isalpha", "isdigit", "islower", "isupper" ]
+print(any(getattr(c,meths) for c in s))
+
+#print(any(map(lambda s : "c.", meths)for c in s[:1000]))
+
+name=input()
+for f in [ "isdigit"]:
+    print(any(eval("c."+f+"()") for c in name[:1000]))
+
+
+
+
+
+
+def dec_num(num):
+    d=num
+    return d
+result=dec_num(9)
+print(result)
+
+
+def print_formatted(number):
+    count=1
+    while count<=number<=99:
+        d = (count)
+        de=str(d)
+        o=oct(count)[2:]
+        he=str(hex(count))[2:]
+        h=he.upper()
+        b=bin(count)[2:]
+        w=(len(b))
+        count+=1
+        print(de.rjust(w),o.rjust(w), h.rjust(w), b.rjust(w))
+    return
+print_formatted(14)
+
+def binary_len(num):
+    de=str(num)
+    he = str(hex(num))[2:]
+    h = he.upper()
+    result=bin(num)[2:]
+    w=(len(result))
+
+    return
+first_res=binary_len(10)
+
+def test(num):
+    count=1
+    for i in range(1, num+1):
+        w=num.bit_length()
+        print(f"{i:{w}d} {i:{w}o} {i:{w}X} {i:{w}b}")
+
+test(14)
+
+
+def join_both(bnum,dnum):
+    bnum=(int(input()))
+    dnum=(int(input()))
+    bnum=binary_len()
+    dnum=dec_num()
+    print(binary_len())
+    print(dec_num())
+join_both(10,11)
+
+
+# i have to ensure that first and last name first char should be capitalized
+def solve(s):
+    for letter in s.split():
+        s=s.replace(letter,letter.capitalize())
+    print(s)
+result=solve("sudheer Kiran")
+
+
+thickness = int(input()) #This must be an odd number
+c = 'H'
+
+#Top Cone
+for i in range(thickness):
+    print((c*i).rjust(thickness-1)+c+(c*i).ljust(thickness-1))
+#Top Pillars
+for i in range(thickness+1):
+    print((c*thickness).center(thickness*2)+(c*thickness).center(thickness*6))
+#Middle Belt
+for i in range((thickness+1)//2):
+    print((c*thickness*5).center(thickness*6))
+for i in range(thickness+1):
+    print((c*thickness).center(thickness*2)+(c*thickness).center(thickness*6))
+#Bottom Cone
+for i in range(thickness):
+    print(((c*(thickness-i-1)).rjust(thickness,"-")+c+(c*(thickness-i-1)).ljust(thickness,"_")).rjust(thickness*6,"!"))
+
+
+
+def is_leap(year):
+    leap = False
+
+    # Write your logic here
+    if year % 4 ==0 :
+        leap=True
+    if year % 100 ==0:
+        leap=False
+    if year % 400 == 0:
+        leap=True
+    return leap
+print(is_leap(2024))
+
+import random
+
+#num=random.randint(1,100)
+num = 20
+print(num)
+if num % 2 != 0:
+    print("Weird")
+elif num % 2 ==0 and range(2,5):
+    print("Not Weird")
+elif num % 2 == 0 and range(6,20):
+    print("Weird")
+elif num % 2 == 0 and num > 20:
+    print("Not Weird")
+
+my_string="sudheer"
+print(my_string.split())
+l_string=list(my_string)
+print(l_string)
+l_string[0]="d"
+print(l_string)
+result="".join(l_string)
+print(result.capitalize())
+
+def lesser_of_two_evens(a,b):
+    # find if a,b are even. if it's even print the least num
+    if (a and b % 2 == 0) and (a or b % 2 != 0) :
+        print(min(a,b))
+    else:print(max(a,b))
+lesser_of_two_evens(8,3)
+
+def lesser_of_two_evens(a, b):
+    if a % 2 == 0 and b % 2 == 0:
+        print(min(a, b))
+    else:
+        print(max(a, b))
+lesser_of_two_evens(12, 13)
+
+def animal_crackers(text):
+    my_string=text.split()
+    return my_string[0][0]==my_string[1][0]
+result = animal_crackers("Krazy Kangaroo")
+print(result)
+
+def display(row1,row2,row3):
+    print(row1)
+    print(row2)
+    print(row3)
+row1 =[1,23,3,5]
+row2 =[2,35,35,2]
+row3 =[5,42,6,3]
+row2[0]=22
+display(row1,row2,row3)
+
+
+# validating
+def user_choice():
+    choice="Wrong"
+    while choice.isdigit()==False:
+        choice=input("please enter a number (0 - 9) :")
+        if choice.isdigit()==False:
+            print("sorry its not a number")
+user_choice()
+'''
+'''
+#
+person=input("what's your name? ")
+while person.islower()==True:
+    print(f"{person}")if n/2==0:
+...     print("even")
+... else: print("odd")
+    if person.isupper():
+        print("please enter it in upper case")
+
+import textwrap
+def wrap(string, max_width):
+    my_string = textwrap.wrap(string,max_width)
+
+    return "\n".join(my_string)
+res=wrap("sudheer is a good boy",3)
+print(res)
+
